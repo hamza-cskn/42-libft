@@ -1,8 +1,22 @@
-void ft_striteri(char *str, void (*func)(unsigned int, char *)) {
-	int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/24 21:41:50 by hcoskun42         #+#    #+#             */
+/*   Updated: 2023/06/24 21:42:22 by hcoskun42        ###   ########.tr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_striteri(char *str, void (*func)(unsigned int, char *))
+{
+	int	i;
 
 	i = 0;
-	while (str[i]) {
+	while (str[i])
+	{
 		func(i, str + i);
 		i++;
 	}
