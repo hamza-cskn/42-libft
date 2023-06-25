@@ -31,7 +31,7 @@ static void	natural_itoa(int nb, char *str)
 {
 	if (nb >= 10)
 		natural_itoa(nb / 10, str - 1);
-	*str = (char) nb % 10 + '0';
+	*str = nb % 10 + '0';
 }
 
 char	*ft_itoa(int nb)
