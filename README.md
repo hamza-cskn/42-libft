@@ -42,145 +42,146 @@ These functions are not in the libc library.
 
 #### [ft_substr](https://github.com/hamza-cskn/42-libft/blob/master/ft_substr.c)
 **Prototype:** char *ft_substr (char const *s, unsigned int start, size_t len);
-**Parameters:** 
+<br>**Parameters:** 
 - **s**: The string from which to create the substring.
 - **start**: The start index of the substring in the string 's'.
 - **len**: The maximum length of the substring.
-**Return value:** 
+
+<br>**Return value:** 
 - The substring.
 - NULL if the allocation fails.
-**External functs.:** malloc
-**Description:** 
+
+<br>**Description:** 
 Allocates (with malloc(3)) and returns a substring from the string 's'. The substring begins at index 'start' and is of maximum size 'len'.
 
 ***
 
 #### [ft_strjoin](https://github.com/hamza-cskn/42-libft/blob/master/ft_strjoin.c)
 **Prototype:** char *ft_strjoin(char const *s1, char const *s2) ;
-**Parameters:** 
+<br>**Parameters:** 
 - **s1**: The prefix string.
 - **s2**: The suffix string.
-**Return value:** 
+
+<br>**Return value:** 
 - The new string.
 - NULL if the allocation fails.
-**External functs.:** malloc
-**Description:** 
+
+<br>**Description:** 
 Allocates (with malloc(3)) and returns a new string, which is the result of the concatenation of 's1' and 's2'.
 
 ***
 
 #### [ft_strtrim](https://github.com/hamza-cskn/42-libft/blob/master/ft_strtrim.c)
 **Prototype:** char *ft_strtrim(char const *s1, char const *set);
-**Parameters:** 
+<br>**Parameters:** 
 - **s1**: The string to be trimmed.
 - **set**: The reference set of characters to trim.
-**Return value:** 
+
+<br>**Return value:** 
 - The trimmed string.
 - NULL if the allocation fails.
-**External functs.:** malloc
-**Description:** 
+
+<br>**Description:** 
 Allocates (with malloc(3)) and returns a copy of 's1' with the characters specified in 'set' removed from the beginning and the end of the string.
 
 #### [ft_split](https://github.com/hamza-cskn/42-libft/blob/master/ft_split.c)
 **Prototype:** char **ft_split(char const *s, char c);
-**Parameters:** 
+<br>**Parameters:** 
 - **s**: The string to be split.
 - **c**: The delimiter character.
-**Return value:** 
+
+<br>**Return value:** 
 - The array of new strings resulting from the split.
 - NULL if the allocation fails.
-**External functs.:** malloc, free
-**Description:** 
+
+<br>**Description:** 
 Allocates (with malloc(3)) and returns an array of strings obtained by splitting 's' using the character 'c' as a delimiter. The array must end with a NULL pointer.
 
 ***
 
 #### [ft_itoa](https://github.com/hamza-cskn/42-libft/blob/master/ft_itoa.c)
 **Prototype:** char *ft_itoa(int n);
-**Parameters:** 
+<br>**Parameters:** 
 - **n**: the integer to convert.
-**Return value:** 
+
+<br>**Return value:** 
 - The string representing the integer.
 - NULL if the allocation fails.
-**External functs.:** malloc
-**Description:** 
+
+<br>**Description:** 
 Allocates (with malloc(3)) and returns a string representing the integer received as an argument. Negative numbers must be handled.
 
 ***
 
 #### [ft_strmapi](https://github.com/hamza-cskn/42-libft/blob/master/ft_strmapi.c)
 **Prototype:** char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-**Parameters:** 
+<br>**Parameters:** 
 - **s**: The string on which to iterate.
 - **f**: The function to apply to each character.
-**Return value:** 
+
+<br>**Return value:** 
 - The string created from the successive applications of 'f'.
 - Returns NULL if the allocation fails.
-**External functs.:** malloc
-**Description:** 
+
+<br>**Description:** 
 Applies the function 'f' to each character of the string 's', passing its index as the first argument to create a new string (with malloc(3)) resulting from successive applications of 'f'.
 
 ***
 
 #### [ft_striteri](https://github.com/hamza-cskn/42-libft/blob/master/ft_striteri.c)
 **Prototype:** void ft_striteri(char *s, void (*f)(unsigned int, char*));
-**Parameters:** 
+<br>**Parameters:** 
 - **s**: The string on which to iterate.
 - **f**: The function to apply to each character.
-**Return value:** 
-- None
-**External functs.:** None
-**Description:** 
+
+<br>**Return value:** None
+<br>**Description:** 
 Applies the function 'f' on each character of the string passed as an argument, passing its index as the first argument. Each character is passed by address to 'f' to be modified if necessary.
 
 ***
 
 #### [ft_putchar_fd](https://github.com/hamza-cskn/42-libft/blob/master/ft_putchar_fd.c)
 **Prototype:** void ft_putchar_fd(char c, int fd);
-**Parameters:** 
+<br>**Parameters:** 
 - **c**: The character to output.
 - **fd**: The file descriptor on which to write.
-**Return value:** 
-- None
-**External functs.:** write
-**Description:** 
+
+<br>**Return value:** None
+<br>**Description:** 
 Outputs the character 'c' to the given file descriptor.
 
 ***
 
 #### [ft_putstr_fd](https://github.com/hamza-cskn/42-libft/blob/master/ft_putstr_fd.c)
 **Prototype:** void ft_putstr_fd(char *s, int fd);
-**Parameters:** 
+<br>**Parameters:** 
 - **s**: The string to output.
 - **fd**: The file descriptor on which to write.
-**Return value:** 
-- None
-**External functs.:** write
-**Description:** 
+
+<br>**Return value:** None
+<br>**Description:** 
 Outputs the string 's' to the given file descriptor.
 
 ***
 
 #### [ft_putendl_fd](https://github.com/hamza-cskn/42-libft/blob/master/ft_putendl_fd.c)
 **Prototype:** void ft_putendl_fd(char *s, int fd);
-**Parameters:** 
+<br>**Parameters:** 
 - **s**: The string to output.
 - **fd**: The file descriptor on which to write.
-**Return value:** 
-- None
-**External functs.:** write
-**Description:** 
+
+<br>**Return value:** None
+<br>**Description:** 
 Outputs the string 's' to the given file descriptor followed by a newline.
 
 ***
 
 #### [ft_putnbr_fd](https://github.com/hamza-cskn/42-libft/blob/master/ft_putnbr_fd.c)
 **Prototype:** void ft_putnbr_fd(int n, int fd);
-**Parameters:** 
+<br>**Parameters:** 
 - **n**: The integer to output.
 - **fd**: The file descriptor on which to write.
-**Return value:** 
-- None
-**External functs.:** write
-**Description:** 
+
+<br>**Return value:** None
+<br>**Description:** 
 Outputs the integer 'n' to the given file descriptor.
