@@ -50,15 +50,22 @@ char	*ft_strtrim(char const *str, char const *set)
 	size_t	len;
 	size_t	i;
 
-	len = ft_strlen(str);
-	start = find_start(str, set);
-	end = find_end(str, set, len);
-	result = malloc(sizeof(char) * (end - start + 2));
-	i = start;
-	while (i < end)
+	len = (int) ft_strlen(str);
+	start = (int) find_start(str, set);
+	end = (int) find_end(str, set, len);
+	if (end < start)
 	{
-		result[i] = str[i];
-		i++;
+		result = malloc(sizeof(char) * 1);
+		result[0] = 0;
+		return (result);
+	}
+	result = malloc(sizeof(char) * (end - start + 2));
+	if (!result)
+		return (NULL);
+	i = -1;
+	while (++i <= end - start)
+	{
+		result[i] = str[i + start];
 	}
 	return (result);
 }
