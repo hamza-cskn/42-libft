@@ -68,5 +68,6 @@ char	*ft_strtrim(char const *str, char const *set)
 	{
 		result[i] = str[i + start];
 	}
+	result[i] = 0;
 	return (result);
 }
