@@ -28,5 +28,6 @@ char	*ft_strmapi(char const *str, char (*func)(unsigned int, char))
 		result[i] = func(i, str[i]);
 		i++;
 	}
+	result[i] = 0;
 	return (result);
 }
