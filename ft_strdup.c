@@ -20,7 +20,7 @@ char	*ft_strdup(const char *str)
 	size_t	len;
 
 	len = ft_strlen(str);
-	res = malloc(sizeof(char *) * len);
+	res = malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
