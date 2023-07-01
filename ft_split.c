@@ -27,7 +27,7 @@ static char	*ft_duplicate(char const *str, int size)
 	int		i;
 	char	*res;
 
-	res = malloc(sizeof(char *) * size);
+	res = malloc(sizeof(char) * size);
 	if (!res)
 		return (0);
 	i = 0;
