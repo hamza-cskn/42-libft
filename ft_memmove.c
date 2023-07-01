@@ -12,20 +12,41 @@
 
 #include "libft.h"
 
+// i hate you norminette
+void	copy(int start, int end, char *dst, const char *src)
+{
+	int	i;
+	int	incr;
+
+	if (start == -1)
+		incr = 1;
+	else
+		incr = -1;
+	i = start;
+	while (i != end)
+	{
+		dst[i] = src[i];
+		i += incr;
+	}
+}
+
+void	directional_cpy(int forward, int len, char *dst, const char *src)
+{
+	if (forward)
+		copy(len, -1, dst, src);
+	else
+		copy(-1, len + 1, dst, src);
+}
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*dest;
 	const char	*source;
 
+	if (!dst && !src)
+		return ((void *) dst);
 	dest = dst;
 	source = src;
-	if (!dest && !source)
-		return ((void *) dest);
-	while (len > 0)
-	{
-		dest[len] = source[len];
-		len--;
-	}
+	directional_cpy(dest > source, (int) len - 1, dest, source);
 	return (dst);
 }
-//tocheck
