@@ -18,6 +18,7 @@ static int	contains(char const *set, char const c)
 	{
 		if (*set == c)
 			return (1);
+		set++;
 	}
 	return (0);
 }
