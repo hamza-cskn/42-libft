@@ -8,9 +8,11 @@
 /*   Created: 2023/06/24 20:32:54 by hcoskun42         #+#    #+#             */
 /*   Updated: 2023/06/24 20:32:55 by hcoskun42        ###   ########.tr       */
 /*                                                                            */
+#include <printf.h>
+
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
