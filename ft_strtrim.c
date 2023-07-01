@@ -23,9 +23,9 @@ static int	contains(char const *set, char const c)
 	return (0);
 }
 
-static size_t	find_start(char const *str, char const *set)
+static int	find_start(char const *str, char const *set)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i] && contains(set, str[i]))
@@ -33,12 +33,12 @@ static size_t	find_start(char const *str, char const *set)
 	return (i);
 }
 
-static size_t	find_end(char const *str, char const *set, size_t len)
+static int	find_end(char const *str, char const *set, int len)
 {
-	size_t	i;
+	int	i;
 
-	i = len - 1;
-	while (i > 0 && !str[i] && contains(set, str[i]))
+	i = (int) len - 1;
+	while (i > 0 && contains(set, str[i]))
 		i--;
 	return (i);
 }
@@ -46,10 +46,10 @@ static size_t	find_end(char const *str, char const *set, size_t len)
 char	*ft_strtrim(char const *str, char const *set)
 {
 	char	*result;
-	size_t	start;
-	size_t	end;
-	size_t	len;
-	size_t	i;
+	int		start;
+	int		end;
+	int		len;
+	int		i;
 
 	len = (int) ft_strlen(str);
 	start = (int) find_start(str, set);
