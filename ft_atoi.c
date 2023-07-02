@@ -13,7 +13,7 @@
 
 int	natural_atoi(const char *str)
 {
-	unsigned int	res;
+	int	res;
 
 	res = 0;
 	while (*str >= '0' && *str <= '9')
@@ -24,21 +24,22 @@ int	natural_atoi(const char *str)
 	return (res);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int sign = 1;
+	int	sign;
+
+	sign = 1;
 	if (!str)
-		return 0;
+		return (0);
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (!*str)
-		return 0;
+		return (0);
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 			sign *= -1;
 		str++;
 	}
-
-	return sign * natural_atoi(str);
+	return (sign * natural_atoi(str));
 }

@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-int min(int a, int b)
+int	min(int a, int b)
 {
 	if (a > b)
-		return b;
-	return a;
+		return (b);
+	return (a);
 }
 
 char	*ft_substr(char const *str, unsigned int start, size_t max_len)
@@ -28,7 +28,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t max_len)
 	{
 		res = malloc(sizeof(char) * 1);
 		res[0] = 0;
-		return res;
+		return (res);
 	}
 	res = malloc(sizeof(char) * (min(ft_strlen(str + start), max_len) + 1));
 	if (!res)

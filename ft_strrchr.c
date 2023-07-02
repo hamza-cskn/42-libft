@@ -21,7 +21,7 @@ char	*ft_strrchr(char *str, int c)
 	i = (int) ft_strlen(str);
 	while (i >= 0)
 	{
-		if (str[i] == (unsigned  char) c)
+		if (str[i] == (unsigned char) c)
 			return ((char *) str + i);
 		i--;
 	}
