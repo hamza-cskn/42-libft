@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:37:39 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/06/24 21:57:46 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2023/07/04 16:36:39 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memset(void *memory, int c, size_t len)
 		mem[i] = (char) c;
 		i++;
 	}
-	return ((void *) mem);
+	return (memory);
 }
