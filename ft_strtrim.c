@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:51:17 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/06/24 21:53:26 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2023/07/04 12:33:27 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+
+# include "libft.h"
 
 static int	contains(char const *set, char const c)
 {
@@ -70,4 +71,8 @@ char	*ft_strtrim(char const *str, char const *set)
 	}
 	result[i] = 0;
 	return (result);
+}
+
+int main() {
+    
 }
