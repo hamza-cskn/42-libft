@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:48:12 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/04 17:10:22 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/07 19:11:05 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,4 @@ char	*ft_strmapi(char const *str, char (*func)(unsigned int, char))
 	}
 	result[i] = 0;
 	return (result);
-}
-
-char any_func(unsigned int index, char c) {
-    return c + 1;
-}
-
-char another_func(unsigned int index, char c) {
-    return c + 2;
-}
-#include <stdio.h>
-int main() {
-    printf("%s\n", ft_strmapi("test", any_func));
-    printf("%s\n", ft_strmapi("test", another_func));
 }
