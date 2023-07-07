@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:55:40 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/06/24 21:56:35 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2023/07/03 15:29:16 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	natural_atoi(const char *str)
 {
@@ -29,8 +29,6 @@ int	ft_atoi(const char *str)
 	int	sign;
 
 	sign = 1;
-	if (!str)
-		return (0);
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (!*str)
