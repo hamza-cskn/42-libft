@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:20:00 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/06/24 20:28:47 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2023/07/09 01:29:37 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,17 @@ static void	natural_itoa(int nb, char *str)
 	*str = nb % 10 + '0';
 }
 
+char	*get_min_int_string(void)
+{
+	char	*result;
+
+	result = (char *) malloc(sizeof(char) * 12);
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, "-2147483648", 12);
+	return (result);
+}
+
 char	*ft_itoa(int nb)
 {
 	char	*result;
@@ -44,11 +55,7 @@ char	*ft_itoa(int nb)
 	if (is_negative)
 	{
 		if (nb == -2147483648)
-		{
-			result = (char *) malloc(sizeof(char) * 12);
-			ft_strlcpy(result, "-2147483648", 12);
-			return (result);
-		}
+			return (get_min_int_string());
 		nb = -nb;
 	}
 	len = digits(nb) + is_negative;

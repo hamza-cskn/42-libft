@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:36:26 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/03 15:28:34 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/08 16:11:46 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	directional_cpy(int forward, int len, char *dst, const char *src)
 		copy(0, len + 1, dst, src);
 	else
 		copy(len, -1, dst, src);
-	
 }
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -51,4 +50,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	directional_cpy(dest < source, (int) len - 1, dest, source);
 	return (dst);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:49:28 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/06/24 21:50:12 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2023/07/08 22:30:31 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strnstr(const char *str, const char *needle, size_t len)
 {
-	int	needle_len;
-	int	i;
+	size_t	needle_len;
+	int		i;
 
 	if (!str && !len)
 		return (NULL);
 	if (*needle == 0)
 		return ((char *) str);
-	needle_len = (int) ft_strlen(needle);
+	needle_len = ft_strlen(needle);
 	i = 0;
-	while (str[i] && i <= ((int) len - needle_len))
+	while (str[i] && i < len && needle_len <= len - i)
 	{
 		if (ft_strncmp(str + i, needle, needle_len) == 0)
 			return ((char *) str + i);

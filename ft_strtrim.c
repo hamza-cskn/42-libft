@@ -6,12 +6,11 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:51:17 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/04 12:33:27 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/08 23:46:02 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-# include "libft.h"
+#include "libft.h"
 
 static int	contains(char const *set, char const c)
 {
@@ -49,30 +48,23 @@ char	*ft_strtrim(char const *str, char const *set)
 	char	*result;
 	int		start;
 	int		end;
-	int		len;
 	int		i;
 
-	len = (int) ft_strlen(str);
-	start = (int) find_start(str, set);
-	end = (int) find_end(str, set, len);
-	if (end < start)
-	{
-		result = malloc(sizeof(char) * 1);
-		result[0] = 0;
-		return (result);
-	}
+	if (!str)
+		return (NULL);
+	start = find_start(str, set);
+	end = find_end(str, set, ft_strlen(str));
+	if (end < start || (!*str && !*set))
+		return (ft_strdup(""));
 	result = malloc(sizeof(char) * (end - start + 2));
 	if (!result)
 		return (NULL);
-	i = -1;
-	while (++i <= end - start)
+	i = 0;
+	while (i <= end - start)
 	{
 		result[i] = str[i + start];
+		i++;
 	}
 	result[i] = 0;
 	return (result);
-}
-
-int main() {
-    
 }

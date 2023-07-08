@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/24 21:41:50 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/08 16:11:10 by hcoskun          ###   ########.fr       */
+/*   Created: 2023/07/08 16:15:26 by hcoskun           #+#    #+#             */
+/*   Updated: 2023/07/08 16:16:37 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *str, void (*func)(unsigned int, char *))
-{
-	int	i;
+#include "libft.h"
 
-	if (!str)
-		return ;
-	i = 0;
-	while (str[i])
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*node;
+
+	if (!lst)
+		return (NULL);
+	node = lst;
+	while (1)
 	{
-		func(i, str + i);
-		i++;
+		if (node -> next)
+			node = node -> next;
+		else
+			return (node);
 	}
 }
