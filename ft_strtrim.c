@@ -6,13 +6,13 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:51:17 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/08 23:46:02 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/10 16:14:17 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	contains(char const *set, char const c)
+int	contains(char const *set, char const c)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ static int	contains(char const *set, char const c)
 	return (0);
 }
 
-static int	find_start(char const *str, char const *set)
+int	find_start(char const *str, char const *set)
 {
 	int	i;
 
@@ -33,7 +33,7 @@ static int	find_start(char const *str, char const *set)
 	return (i);
 }
 
-static int	find_end(char const *str, char const *set, int len)
+int	find_end(char const *str, char const *set, int len)
 {
 	int	i;
 
@@ -45,10 +45,8 @@ static int	find_end(char const *str, char const *set, int len)
 
 char	*ft_strtrim(char const *str, char const *set)
 {
-	char	*result;
 	int		start;
 	int		end;
-	int		i;
 
 	if (!str)
 		return (NULL);
@@ -56,15 +54,5 @@ char	*ft_strtrim(char const *str, char const *set)
 	end = find_end(str, set, ft_strlen(str));
 	if (end < start || (!*str && !*set))
 		return (ft_strdup(""));
-	result = malloc(sizeof(char) * (end - start + 2));
-	if (!result)
-		return (NULL);
-	i = 0;
-	while (i <= end - start)
-	{
-		result[i] = str[i + start];
-		i++;
-	}
-	result[i] = 0;
-	return (result);
+	return (ft_substr(str, start, end - start + 1));
 }

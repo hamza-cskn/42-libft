@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:04:16 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/08 17:49:53 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/11 12:24:57 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		++i;
 	return (str1[i] - str2[i]);
 }
-//to check

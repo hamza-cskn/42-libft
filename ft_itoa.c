@@ -6,13 +6,13 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:20:00 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/09 01:29:37 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/10 12:52:57 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	digits(unsigned int n)
+int	digits(unsigned int n)
 {
 	int	i;
 
@@ -27,22 +27,11 @@ static int	digits(unsigned int n)
 	return (i);
 }
 
-static void	natural_itoa(int nb, char *str)
+void	natural_itoa(int nb, char *str)
 {
 	if (nb >= 10)
 		natural_itoa(nb / 10, str - 1);
 	*str = nb % 10 + '0';
-}
-
-char	*get_min_int_string(void)
-{
-	char	*result;
-
-	result = (char *) malloc(sizeof(char) * 12);
-	if (!result)
-		return (NULL);
-	ft_strlcpy(result, "-2147483648", 12);
-	return (result);
 }
 
 char	*ft_itoa(int nb)
@@ -55,7 +44,7 @@ char	*ft_itoa(int nb)
 	if (is_negative)
 	{
 		if (nb == -2147483648)
-			return (get_min_int_string());
+			return (ft_strdup("-2147483648"));
 		nb = -nb;
 	}
 	len = digits(nb) + is_negative;

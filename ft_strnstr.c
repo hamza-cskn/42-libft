@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:49:28 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/08 22:30:31 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/11 13:03:32 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *str, const char *needle, size_t len)
 {
-	size_t	needle_len;
-	int		i;
+	size_t		needle_len;
+	size_t		i;
 
 	if (!str && !len)
 		return (NULL);

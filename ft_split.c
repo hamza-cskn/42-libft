@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:38:47 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/09 01:28:38 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/11 12:57:42 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,17 @@ static int	wlen(char const *str, char c)
 
 static int	count_words(char const *str, char c)
 {
-	int	i;
 	int	count;
 
 	count = 0;
 	while (*str)
 	{
-		i = 0;
-		while (str[i] && str[i] == c)
-			i++;
-		if (str[i])
+		while (*str && *str == c)
+			str++;
+		if (*str)
 			count++;
-		while (str[i] && str[i] != c)
-			i++;
-		str += i;
+		while (*str && *str != c)
+			str++;
 	}
 	return (count);
 }
@@ -73,10 +70,9 @@ char	**ft_split(char const *str, char c)
 			str++;
 		if (*str)
 		{
-			result[word_index] = malloc((wlen(str, c) + 1) * sizeof(char));
-			if (!result[word_index])
+			result[word_index] = ft_substr(str, 0, wlen(str, c));
+			if (!result[word_index++])
 				return (free_all(result));
-			ft_strlcpy(result[word_index++], str, wlen(str, c) + 1);
 			str += wlen(str, c);
 		}
 	}
