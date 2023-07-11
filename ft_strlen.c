@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun42 <hcoskun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:46:08 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/06/24 21:48:00 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2023/07/11 13:15:43 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//to check const char *c and char const *c
-size_t	ft_strlen(const char *c)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (c[i] != 0)
-	{
+	while (s[i] != 0)
 		i++;
-	}
 	return (i * sizeof(char));
 }

@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:53:38 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/11 13:03:43 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:40:51 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ int	min(int a, int b)
 	return (a);
 }
 
-char	*ft_substr(char const *str, unsigned int start, size_t max_len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*result;
 
-	i = max_len;
-	if (!str)
+	i = len;
+	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(str) || max_len == 0)
+	if (start >= ft_strlen(s) || len == 0)
 		return (ft_strdup(""));
-	if (max_len > ft_strlen(str + start))
-		i = ft_strlen(str + start);
+	if (len > ft_strlen(s + start))
+		i = ft_strlen(s + start);
 	result = (char *) malloc(sizeof(char) * (i + 1));
 	if (!result)
 		return (NULL);
-	ft_strlcpy(result, str + start, i + 1);
+	ft_strlcpy(result, s + start, i + 1);
 	return (result);
 }

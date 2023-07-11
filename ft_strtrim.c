@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:51:17 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/10 16:14:17 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:41:37 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ int	find_end(char const *str, char const *set, int len)
 	return (i);
 }
 
-char	*ft_strtrim(char const *str, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
 
-	if (!str)
+	if (!s1)
 		return (NULL);
-	start = find_start(str, set);
-	end = find_end(str, set, ft_strlen(str));
-	if (end < start || (!*str && !*set))
+	start = find_start(s1, set);
+	end = find_end(s1, set, ft_strlen(s1));
+	if (end < start || (!*s1 && !*set))
 		return (ft_strdup(""));
-	return (ft_substr(str, start, end - start + 1));
+	return (ft_substr(s1, start, end - start + 1));
 }

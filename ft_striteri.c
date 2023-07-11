@@ -6,20 +6,20 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:41:50 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/08 16:11:10 by hcoskun          ###   ########.fr       */
+/*   Updated: 2023/07/11 14:45:05 by hcoskun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *str, void (*func)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
-	if (!str)
+	if (!s)
 		return ;
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		func(i, str + i);
+		f(i, s + i);
 		i++;
 	}
 }
