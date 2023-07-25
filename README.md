@@ -189,3 +189,7 @@ Outputs the string 's' to the given file descriptor followed by a newline.
 <br>**Return value:** None
 <br>**Description:** 
 Outputs the integer 'n' to the given file descriptor.
+
+## Compiling
+1. Clone the repository.
+2. Use `make all` command at directory of the repository.
