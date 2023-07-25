@@ -4,7 +4,7 @@
 > Your very first own library
 
 ## Moulinette
-Passed with 125/125 at 11 July 2023
+Passed with 125/100 at 11 July 2023
 
 ## Summary
 This project is about coding a C library. It will contain a lot of general purpose functions your programs will rely upon. Some of them are replicas of original C functions.
