@@ -192,4 +192,5 @@ Outputs the integer 'n' to the given file descriptor.
 
 ## Compiling
 1. Clone the repository.
+2. Go inside of the repository downloaded: `cd 42-libft`
 2. Use `make all` command at directory of the repository.
