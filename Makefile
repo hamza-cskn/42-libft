@@ -7,10 +7,11 @@ OBJECTS	= $(SOURCES:.c=.o)
 BONUS_SOURCES = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
 
-$(NAME): $(OBJECTS)
-	ar -rc $(NAME) $(OBJECTS)
+all: $(OBJECTS)
 
-all: $(NAME)
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	ar -rcs $(NAME) $@
 
 clean:
 	rm -f $(OBJECTS) $(BONUS_OBJECTS)
@@ -22,5 +23,3 @@ re: fclean all
 
 bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	ar -rc $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
-
-.PHONY: all re clean fclean bonus
