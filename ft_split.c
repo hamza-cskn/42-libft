@@ -53,29 +53,31 @@ char	**free_all(char **result)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**result;
 	int		word_index;
+	int		i;
+	int		len;
 
-	if (!s)
+	if (!str)
 		return (NULL);
-	word_index = 0;
-	result = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
+	result = (char **) ft_calloc(sizeof(char *), count_words(str, c) + 1);
 	if (!result)
 		return (NULL);
-	while (*s)
+	word_index = 0;
+	i = 0;
+	while (str[i])
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s)
-		{
-			result[word_index] = ft_substr(s, 0, wlen(s, c));
-			if (!result[word_index++])
-				return (free_all(result));
-			s += wlen(s, c);
-		}
+		while (str[i] && str[i] == c)
+			i++;
+		if (!str[i])
+			break ;
+		len = wlen(str + i, c);
+		result[word_index] = ft_substr(str, i, len);
+		if (!result[word_index++])
+			return (free_all(result));
+		i += len;
 	}
-	result[word_index] = NULL;
 	return (result);
 }
