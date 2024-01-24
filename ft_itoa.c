@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:20:00 by hcoskun42         #+#    #+#             */
-/*   Updated: 2024/01/24 09:16:55 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2024/01/24 09:32:57 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 		n = -n;
 	}
 	len = digits(n) + is_negative;
-	result = (char *) ALLOCATE_MEMORY(sizeof(char) * (len + 1));
+	result = (char *) malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
 	if (is_negative)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:38:47 by hcoskun42         #+#    #+#             */
-/*   Updated: 2024/01/24 09:19:59 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2024/01/24 09:33:20 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ char	**free_all(char **result)
 	i = 0;
 	while (result[i])
 	{
-		FREE_MEMORY(result[i]);
+		free(result[i]);
 		i++;
 	}
-	FREE_MEMORY(result);
+	free(result);
 	return (NULL);
 }
 

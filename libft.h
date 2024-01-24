@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hamza <hamza@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:05:04 by hcoskun42         #+#    #+#             */
-/*   Updated: 2024/01/24 09:13:44 by hcoskun42        ###   ########.tr       */
+/*   Updated: 2024/01/24 09:32:26 by hamza            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-
-#ifndef ALLOCATE_MEMORY
-# define ALLOCATE_MEMORY malloc
-#endif
-
-#ifndef FREE_MEMORY
-# define FREE_MEMORY free
-#endif
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
