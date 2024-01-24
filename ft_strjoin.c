@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 21:43:00 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/10 15:22:52 by hcoskun          ###   ########.fr       */
+/*   Updated: 2024/01/24 09:15:53 by hcoskun42        ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s2)
 		return (ft_strdup(s2));
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	string = malloc(sizeof(char) * size);
+	string = ALLOCATE_MEMORY(sizeof(char) * size);
 	if (!string)
 		return (NULL);
 	ft_strlcpy(string, s1, size);

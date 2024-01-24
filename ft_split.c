@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 20:38:47 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/11 14:42:09 by hcoskun          ###   ########.fr       */
+/*   Updated: 2024/01/24 09:19:59 by hcoskun42        ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ char	**free_all(char **result)
 	i = 0;
 	while (result[i])
 	{
-		free(result[i]);
+		FREE_MEMORY(result[i]);
 		i++;
 	}
-	free(result);
+	FREE_MEMORY(result);
 	return (NULL);
 }
 

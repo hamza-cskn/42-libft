@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:13:30 by hcoskun           #+#    #+#             */
-/*   Updated: 2023/07/08 16:14:49 by hcoskun          ###   ########.fr       */
+/*   Updated: 2024/01/24 09:17:59 by hcoskun42        ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	node = (t_list *) malloc(sizeof(t_list));
+	node = (t_list *) ALLOCATE_MEMORY(sizeof(t_list));
 	if (!node)
 		return (NULL);
 	node -> content = content;

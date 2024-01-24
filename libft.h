@@ -6,7 +6,7 @@
 /*   By: hcoskun <hcoskun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:05:04 by hcoskun42         #+#    #+#             */
-/*   Updated: 2023/07/11 14:44:16 by hcoskun          ###   ########.fr       */
+/*   Updated: 2024/01/24 09:13:44 by hcoskun42        ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+#ifndef ALLOCATE_MEMORY
+# define ALLOCATE_MEMORY malloc
+#endif
+
+#ifndef FREE_MEMORY
+# define FREE_MEMORY free
+#endif
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -70,4 +78,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
+
 #endif
